@@ -37,7 +37,7 @@ export default function HomePage() {
               <h1>{businessInfo.taglines[4]}</h1>
             </span>
             <p className="description-text-expertise-header">
-              {businessInfo.companyOverview}
+              Pest Free Properties specializes in efficient pest control solutions for property managers and landlords, focusing on vacant unit treatments and turnover services. Our streamlined process eliminates the need for tenant coordination, making property management easier. With over 20 years of experience serving property managers across two counties, we've developed a comprehensive approach to pest control that ensures quick, effective results. Our double-certified technicians are equipped with the latest industry knowledge and tools to handle any pest situation, from common nuisances to severe infestations. We understand the unique challenges property managers face and offer flexible scheduling, detailed reporting, and competitive pricing to meet your specific needs.
             </p>
           </div>
 
