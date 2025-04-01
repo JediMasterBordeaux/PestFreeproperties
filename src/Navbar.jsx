@@ -1,51 +1,78 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Offcanvas, Button } from 'react-bootstrap';
+import { Offcanvas } from 'react-bootstrap';
 import { businessInfo } from './content/businessInfo';
+import './Styles/navbar_styles.scss';
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const navLinks = [
+    { to: '/', text: 'Home' },
+    { to: '/services', text: 'Services' },
+    { to: '/pest-id', text: 'Pest ID' },
+    { to: '/service-areas', text: 'Service Areas' },
+    { to: '/contact', text: 'Contact' }
+  ];
+
   return (
-    <>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-logo">
-              <h1>Pest Free Properties</h1>
-              <div className="navbar-tagline">
-                <div>Built for Turnovers. Backed by 20+ Years. Powered by Results.</div>
-                <div>Trusted by Property Managers & Landlords Across Duval & Nassau.</div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="navbar-links">
-            <Link to="/" className="nav-link" onClick={handleClose}>Home</Link>
-            <Link to="/services" className="nav-link" onClick={handleClose}>Services</Link>
-            <Link to="/pest-id" className="nav-link" onClick={handleClose}>Pest ID</Link>
-            <Link to="/service-areas" className="nav-link" onClick={handleClose}>Service Areas</Link>
-            <Link to="/contact" className="nav-link" onClick={handleClose}>Contact</Link>
-          </div>
-
-          <div className="navbar-contact">
-            <a href={`tel:${businessInfo.contact.phone}`} className="contact-phone">
-              {businessInfo.contact.phone}
-            </a>
-          </div>
-
-          <Button 
-            variant="outline-primary" 
-            className="d-md-none mobile-menu-button"
-            onClick={handleShow}
-          >
-            <span className="hamburger-icon">☰</span>
-          </Button>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-brand">
+          <Link to="/" className="navbar-logo" onClick={handleClose}>
+            <h1>Pest Free Properties</h1>
+            <div className="navbar-tagline">
+              <div>Built for Turnovers. Backed by 20+ Years.</div>
+              <div>Trusted by Property Managers & Landlords</div>
+            </div>
+          </Link>
         </div>
-      </nav>
+
+        {!isMobile && (
+          <>
+            <div className="navbar-links">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="nav-link"
+                  onClick={handleClose}
+                >
+                  {link.text}
+                </Link>
+              ))}
+            </div>
+            <div className="navbar-contact">
+              <a href={`tel:${businessInfo.contact.phone}`} className="contact-phone">
+                {businessInfo.contact.phone}
+              </a>
+            </div>
+          </>
+        )}
+
+        {isMobile && (
+          <button
+            className="mobile-menu-button"
+            onClick={handleShow}
+            aria-label="Toggle navigation menu"
+          >
+            ☰
+          </button>
+        )}
+      </div>
 
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
@@ -53,18 +80,23 @@ export default function Navbar() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="mobile-nav-links">
-            <Link to="/" className="nav-link" onClick={handleClose}>Home</Link>
-            <Link to="/services" className="nav-link" onClick={handleClose}>Services</Link>
-            <Link to="/pest-id" className="nav-link" onClick={handleClose}>Pest ID</Link>
-            <Link to="/service-areas" className="nav-link" onClick={handleClose}>Service Areas</Link>
-            <Link to="/contact" className="nav-link" onClick={handleClose}>Contact</Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="nav-link"
+                onClick={handleClose}
+              >
+                {link.text}
+              </Link>
+            ))}
             <a href={`tel:${businessInfo.contact.phone}`} className="contact-phone">
               {businessInfo.contact.phone}
             </a>
           </div>
         </Offcanvas.Body>
       </Offcanvas>
-    </>
+    </nav>
   );
 }
 
