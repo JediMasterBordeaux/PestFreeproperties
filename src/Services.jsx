@@ -74,6 +74,52 @@ export default function Services() {
             </div>
           </FadeInSection>
 
+          {/* Pricing Section */}
+          <FadeInSection>
+            <div className="pricing-section">
+              <h2>Our Service <span className="trusted-source-text-styles">Packages</span> & Pricing</h2>
+              <div className="pricing-grid">
+                <div className="pricing-card">
+                  <h3>General Household Pest Control</h3>
+                  <div className="price">$450</div>
+                  <div className="sub-price">starting at</div>
+                  <ul>
+                    <li>Roaches, ants, spiders, rodents</li>
+                    <li>Interior + exterior treatment</li>
+                    <li>Entry-point sealing</li>
+                    <li>14-day pest-free guarantee</li>
+                  </ul>
+                  <button onClick={() => document.getElementById('ant-section').scrollIntoView({ behavior: 'smooth' })} className="pricing-button">View Details</button>
+                </div>
+                <div className="pricing-card featured">
+                  <div className="featured-badge">Most Common</div>
+                  <h3>Bed Bug Eradication</h3>
+                  <div className="price">$300</div>
+                  <div className="sub-price">per room</div>
+                  <ul>
+                    <li>Chemical treatment (mattress & furniture safe)</li>
+                    <li>Full unit inspection included</li>
+                    <li>Follow-up available as needed</li>
+                  </ul>
+                  <button onClick={() => document.getElementById('bed-bug-section').scrollIntoView({ behavior: 'smooth' })} className="pricing-button">View Details</button>
+                </div>
+                <div className="pricing-card">
+                  <h3>Termite Treatment</h3>
+                  <div className="price">$600</div>
+                  <div className="sub-price">flat rate</div>
+                  <ul>
+                    <li>Direct liquid treatment (no bait systems)</li>
+                    <li>Crawlspace, slab, and perimeter covered</li>
+                    <li>6-month retreatment guarantee</li>
+                    <li>Contracts available for long-term protection</li>
+                    <li>Optional termite report: $125</li>
+                  </ul>
+                  <button onClick={() => document.getElementById('termite-section').scrollIntoView({ behavior: 'smooth' })} className="pricing-button">View Details</button>
+                </div>
+              </div>
+            </div>
+          </FadeInSection>
+
           <InsectCards />
 
           <div className="service-container-cards-wrapper">

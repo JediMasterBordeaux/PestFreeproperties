@@ -21,11 +21,12 @@
 
 .pestid-header-wrapper {
   background: linear-gradient(135deg, #39B54A 0%, #2d8e3a 100%);
-  padding: 4rem 2rem;
+  padding: 8rem 2rem 4rem;
   position: relative;
   overflow: hidden;
   text-align: center;
   margin-bottom: 4rem;
+  margin-top: 60px;
 
   &::before {
     content: '';
@@ -42,7 +43,7 @@
 
   h1 {
     color: white;
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     margin-bottom: 1rem;
     position: relative;
@@ -52,7 +53,7 @@
 
   h3 {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     max-width: 800px;
     margin: 0 auto;
     position: relative;
@@ -371,12 +372,8 @@
 
 @media (max-width: 768px) {
   .pestid-header-wrapper {
-    h1 {
-      font-size: 3rem;
-    }
-    h3 {
-      font-size: 1.2rem;
-    }
+    padding: 6rem 1rem 3rem;
+    margin-top: 50px;
   }
 
   .service-container-2 {
