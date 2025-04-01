@@ -7,6 +7,20 @@
     <title>Pest Free Properties</title>
   </head>
   <body>
+    <!-- A little form for netlify to detect -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="service">
+        <option value="General Pest Control">General Pest Control</option>
+        <option value="Termite Control">Termite Control</option>
+        <option value="Rodent Control">Rodent Control</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
