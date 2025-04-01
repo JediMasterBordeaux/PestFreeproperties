@@ -1,108 +1,65 @@
 import React from 'react';
-import ppsLogo from '../assets/PPS-logo.jpeg';
-import fbLogo from '../assets/facebook-logo-meta-2-svgrepo-com (1).svg';
-import instaLogo from '../assets/instagram-svgrepo-com (2).svg';
-import linkedInLogo from '../assets/linkedin-161-svgrepo-com.svg';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { businessInfo } from './content/businessInfo';
 
-export default function Footer() {
-  const [errors, setErrors] = useState({});
-
-  const [formInput, setFormInput] = useState('');
-
-  const [formData, setFormData] = useState({
-    email: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = {};
-
-    if (!formData.email.trim()) {
-      validationErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      validationErrors.email = 'Email is not valid';
-    }
-
-    setErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length === 0) {
-      alert('Form Submitted Successfully');
-    }
-  };
-
+const Footer = () => {
   return (
     <div className="footer-content-wrapper">
-      <div className="footer-welcome-to-container">
-        <h5>
-          Welcome To <span className="footer-pps-text">Prodigy Pest Solutions</span>
-        </h5>
-
-        <p>
-          We are a leading pest control company, dedicated to providing exceptional services and ensuring pest-free
-          environments
-        </p>
-
-        <div className="footer-icon-container">
-          <div className="footer-fb-logo-container">
-            <img src={fbLogo}></img>
-          </div>
-
-          <div className="footer-insta-logo-container">
-            <img src={instaLogo}></img>
-          </div>
-
-          <div className="footer-linkedin-logo-container">
-            <img src={linkedInLogo}></img>
-          </div>
+      <div className="footer-company-info">
+        <h3>Pest Free Properties</h3>
+        <div className="footer-contact">
+          <p>Phone: {businessInfo.contact.phone}</p>
+          <p>Email: {businessInfo.contact.email}</p>
+          <p>Address: P.O. Box 40174, Jacksonville, FL 32203</p>
         </div>
       </div>
 
-      <div className="footer-privacy-policy-container">
-        <h4>Privacy Policy</h4>
-
-        <h5>Cookie Policy</h5>
-
-        <h5>Data Protection</h5>
-
-        <h5>Data Security</h5>
-
-        <h5>Information Security</h5>
+      <div className="footer-services">
+        <h3>Our Services</h3>
+        <ul>
+          <li>General Household Pest Control</li>
+          <li>Bed Bug Eradication</li>
+          <li>Termite Treatment</li>
+        </ul>
       </div>
 
-      <div className="footer-emergency-services-container">
-        <h4>Emergency Services</h4>
-
-        <h5>Rapid Response</h5>
-
-        <h5>Quick Relief</h5>
-
-        <h5>Fast Action</h5>
-
-        <h5>Instant Help</h5>
+      <div className="footer-credentials">
+        <h3>Credentials</h3>
+        <ul>
+          <li>Licensed</li>
+          <li>Insured</li>
+          <li>Bonded</li>
+          <li>Double Certified</li>
+        </ul>
+        <p>20+ Years of Experience</p>
       </div>
 
-      <div className="newsletter-container">
-        <h4>Newsletter</h4>
+      <div className="footer-payment">
+        <h3>Payment Methods</h3>
+        <ul>
+          <li>Credit/Debit Cards</li>
+          <li>Zelle</li>
+          <li>Venmo</li>
+          <li>PayPal</li>
+          <li>Cash App</li>
+          <li>Cash</li>
+        </ul>
+      </div>
 
-        <form onClick={handleSubmit} className="email-subscribe-container">
-          <input placeholder="Email Address" name="email" value={formData.email} onChange={handleChange} type="email" />
-          {errors.email && <span className="error-message">{errors.email}</span>}
+      <div className="footer-welcome-to-container">
+        <h5>Welcome to <span className="footer-pps-text">Pest Free Properties</span></h5>
+      </div>
 
-          <div className="newsletter-btn-container">
-            <button type="submit">Subscribe</button>
-          </div>
-        </form>
+      <div className="footer-links-container">
+        <h5>Quick Links</h5>
+        <Link to="/">Home</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/pest-id">Pest ID</Link>
+        <Link to="/service-areas">Service Areas</Link>
+        <Link to="/contact">Contact</Link>
       </div>
     </div>
   );
-}
+};
+
+export default Footer;

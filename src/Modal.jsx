@@ -70,10 +70,6 @@ export default function Modal({ isOpen, onClose }) {
                 <div className="dropdown">
                   <button>Contact</button>
                 </div>
-
-                <div className="dropdown">
-                  <button>Reviews</button>
-                </div>
               </div>
             </div>
           </div>

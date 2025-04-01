@@ -1,186 +1,110 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import philadelphiaImg from '../assets/pexels-trev-takes-photos-11531610.jpg';
-import delcoImg from '../assets/chris-henry-rUMzI6Vn7hU-unsplash.jpg';
-import chesterImg from '../assets/dan-mall-HL4LuaElk2I-unsplash (1).jpg';
-import montgomeryCountyImg from '../assets/jason-pischke-TYrQCzejRxE-unsplash.jpg';
-import bucksCountyImg from '../assets/luke-hodde-9MY4Ji2w6Zg-unsplash.jpg';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export default function ServiceAreas() {
+// Standalone component for the service areas content
+export function ServiceAreasContent() {
   const location = useLocation();
-  const delcoSection = useRef(null);
-  const phillySection = useRef(null);
-  const chesterSection = useRef(null);
-  const montcoSection = useRef(null);
-  const bucksSection = useRef(null);
+  const duvalSection = useRef(null);
+  const nassauSection = useRef(null);
 
   useEffect(() => {
     const hash = location.hash;
 
-    if (hash === '#delco-section') {
-      delcoSection.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (hash === '#philly-section') {
-      phillySection.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (hash === '#chester-section') {
-      chesterSection.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (hash === '#montco-section') {
-      montcoSection.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (hash === '#bucks-section') {
-      bucksSection.current.scrollIntoView({ behavior: 'smooth' });
+    if (hash === '#duval-section') {
+      duvalSection.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (hash === '#nassau-section') {
+      nassauSection.current.scrollIntoView({ behavior: 'smooth' });
     }
-  });
+  }, [location]);
 
   return (
-    <>
-      <Navbar></Navbar>
-
-      <div className="service-areas-tab-content-wrapper">
-        <div className="service-areas-header-wrapper">
-          <div className="service-areas-header-text-container">
-            <h1>Service Areas</h1>
-          </div>
-        </div>
-
-        <div className="service-header-text-container">
-          <h1 className="serve-you-header-text">We Are Here To Serve You</h1>
-
-          <h1>Proudly Serving The Following Areas </h1>
-        </div>
-
-        <div className="service-areas-wrapper">
-          <div className="service-area-container" >
-            <img src={delcoImg}></img>
-
-            <div className="service-area-content-container">
-              <h1 id="delco-section" ref={delcoSection}>Delaware County</h1>
-
-              <p>
-                We proudly serve Delaware County, PA, providing top-notch pest control services to keep your homes and
-                businesses pest-free. Our dedicated team is committed to ensuring a safe and healthy environment for all
-                residents of Delaware County.
-              </p>
-
-              <ul>
-                <li>Ridley</li>
-                <li>Morton</li>
-                <li>Springfield</li>
-                <li>Darby</li>
-                <li>Media</li>
-                <li>Brookhaven</li>
-                <li>Clifton Heights</li>
-                <li>Prospect Park</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="service-area-container">
-            <img src={philadelphiaImg}></img>
-
-            <div className="service-area-content-container">
-              <h1 id="philly-section" ref={phillySection}>Philadelphia</h1>
-
-              <p>
-                We proudly serve Philadelphia, PA, delivering exceptional pest control services to ensure your homes and
-                businesses remain pest-free. Our experienced team is dedicated to providing a safe and healthy
-                environment for all residents and businesses in the vibrant city of Philadelphia.
-              </p>
-
-              <ul>
-                <li>Fishtown</li>
-                <li>Center City</li>
-                <li>Northern Liberties</li>
-                <li>Chinatown</li>
-                <li>Fairmont</li>
-                <li>Callowhill</li>
-                <li>South Philadelphia</li>
-                <li>Rittenhouse</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="service-area-container">
-            <img src={chesterImg}></img>
-
-            <div className="service-area-content-container">
-              <h1 id="chester-section" ref={chesterSection}>Chester County</h1>
-
-              <p>
-                We are proud to serve Chester County, PA, providing top-notch pest control services to ensure your homes
-                and businesses stay pest-free. Our dedicated team is committed to creating a safe and healthy
-                environment for all residents and businesses throughout the beautiful Chester County area.
-              </p>
-
-              <ul>
-                <li>West Chester</li>
-                <li>Dowingtown</li>
-                <li>Malvern</li>
-                <li>Coatesville</li>
-                <li>West Grove</li>
-                <li>Spring City</li>
-                <li>Parkesburg</li>
-                <li>Atglen</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="service-area-container">
-            <img src={montgomeryCountyImg}></img>
-
-            <div className="service-area-content-container">
-              <h1 id="montco-section" ref={montcoSection}>Montgomery County</h1>
-
-              <p>
-                We are proud to extend our exceptional pest control services to Montgomery County, PA. Our experienced
-                team is dedicated to safeguarding the homes and businesses of this vibrant community, ensuring a
-                pest-free environment for all residents. Trust us to provide effective and reliable pest control
-                solutions tailored to the unique needs of Montgomery County.
-              </p>
-
-              <ul>
-                <li>East Norriton</li>
-                <li>Abington</li>
-                <li>Horsham</li>
-                <li>Limerick</li>
-                <li>Cheltenham</li>
-                <li>Lansdale</li>
-                <li>Conshohocken</li>
-                <li>King Of Prussia</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="service-area-container">
-            <img src={bucksCountyImg}></img>
-
-            <div className="service-area-content-container">
-              <h1 id="bucks-section" ref={bucksSection}>Bucks County</h1>
-
-              <p>
-                We are delighted to offer our comprehensive pest control services to the residents and businesses of
-                Bucks County, PA. Our dedicated team is committed to protecting this beautiful area from unwanted pests,
-                ensuring a safe and comfortable environment for all. Rely on us for effective and customized pest
-                control solutions that meet the specific needs of Bucks County.
-              </p>
-
-              <ul>
-                <li>Doylestown</li>
-                <li>Bensalem</li>
-                <li>Richboro</li>
-                <li>Quakertown</li>
-                <li>Levittown</li>
-                <li>Perkasie</li>
-                <li>New Hope</li>
-                <li>Buckingham</li>
-              </ul>
-            </div>
-          </div>
+    <div className="service-areas-tab-content-wrapper">
+      <div className="service-areas-header-wrapper">
+        <div className="service-areas-header-text-container">
+          <h1>Service Areas</h1>
         </div>
       </div>
 
-      <Footer></Footer>
+      <div className="service-header-text-container">
+        <h1 className="serve-you-header-text">We Are Here To Serve You</h1>
+        <h1>Proudly Serving Northeast Florida</h1>
+      </div>
+
+      <div className="service-areas-wrapper">
+        <div className="service-area-container">
+          <div className="service-area-content-container">
+            <h1 id="duval-section" ref={duvalSection}>Duval County</h1>
+
+            <p>
+              We proudly serve Duval County, FL, providing expert pest control services for property managers and landlords.
+              Our specialized team focuses on vacant unit treatments and turnover services throughout Jacksonville and its
+              surrounding communities.
+            </p>
+
+            <ul>
+              <li>Jacksonville</li>
+              <li>Jacksonville Beach</li>
+              <li>Neptune Beach</li>
+              <li>Atlantic Beach</li>
+              <li>Baldwin</li>
+              <li>San Marco</li>
+              <li>Riverside</li>
+              <li>Mandarin</li>
+              <li>Arlington</li>
+              <li>Southside</li>
+              <li>Northside</li>
+              <li>Westside</li>
+              <li>Mayport</li>
+              <li>Deerwood</li>
+              <li>San Jose</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="service-area-container">
+          <div className="service-area-content-container">
+            <h1 id="nassau-section" ref={nassauSection}>Nassau County</h1>
+
+            <p>
+              We proudly serve Nassau County, FL, delivering exceptional pest control services for property managers and landlords.
+              Our team specializes in vacant unit treatments and turnover services throughout Fernandina Beach and the
+              surrounding areas.
+            </p>
+
+            <ul>
+              <li>Fernandina Beach</li>
+              <li>Yulee</li>
+              <li>Callahan</li>
+              <li>Hilliard</li>
+              <li>Amelia Island</li>
+              <li>Bryceville</li>
+              <li>Nassau Village-Ratliff</li>
+              <li>American Beach</li>
+              <li>Chester</li>
+              <li>Crawford</li>
+              <li>Italia</li>
+              <li>Kent</li>
+              <li>Nassauville</li>
+              <li>O'Neil</li>
+              <li>Spring Hill</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Full page component with navbar and footer
+export default function ServiceAreas() {
+  return (
+    <>
+      <Navbar />
+      <ServiceAreasContent />
+      <Footer />
     </>
   );
 }

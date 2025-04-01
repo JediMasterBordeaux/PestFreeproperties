@@ -11,10 +11,8 @@ import rodentsImg from '../assets/pexels-skitterphoto-3773.jpg';
 import mosquitoImg from '../assets/pexels-ekamelev-1685610.jpg';
 import fleaImg from '../assets/171.jpg';
 import spiderImg from '../assets/pexels-ekamelev-995466.jpg';
-import PaymentPlans from './PaymentPlans';
 import goldMedal from '../assets/medal.png';
 import Footer from './Footer';
-import PaymentPlansServicePage from './PaymentPlansServicesPage';
 import antBackgroundImg from '../assets/peter-f-wolf-XG8eYNYdz54-unsplash.jpg';
 
 import { useEffect, useRef } from 'react';
