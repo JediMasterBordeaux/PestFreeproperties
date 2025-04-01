@@ -1,0 +1,129 @@
+//
+
+5/4 
+
+work on placing the animated images in certain sections, 
+
+check the site and see where the images can fit,
+
+
+first I see the payment plan section, 
+
+see if you can place the animated image in row with the rest of the content, 
+
+use animated image in meet the team section, the one in the row with payment looks good 
+
+change the img in the meet the team section, 
+
+
+
+// adjust the images before the footer, see if you can find a new first image 
+
+
+// start making the navbar responsive and go through each section 
+
+making it responsive and polishing 
+
+make the navbar icons bigger, that should take care of the responsiveness, 
+
+ remove previous media query styles and start the media querys over, 
+
+
+ why is the search icon going away, when the navbar button container is removed
+
+
+ try to center the container 
+
+
+
+
+
+ // working on making the testiomonial section responsive 
+
+ // I think the current approach won't work, the img within the carousel 
+ // is a certain size, it can't shrink too much the user will not be able to read CFA
+ // you cannot import images because they will have a fixed width and you cannot adjust them 
+
+ // write the content within the carousel 
+
+ // there will be no other way to make it responsive
+
+*-----------
+
+ // 5/18 
+
+ complete testimonial section and make it responsive, 
+
+ // then begin building the services section, 
+
+ // remove the slides you had in there previously and use flex container 
+
+ with cropped picture ?? Or just manipulate the picture, 
+
+ make sure all the pictures are around the same size, 
+
+ // screen is probably shrinking because the second picture is smaller 
+
+
+
+
+ *------------------- 
+
+ // 5/24 
+
+ Services page 
+
+ // make the background of philly skyline, with service areas text as an overlay 
+
+ 
+// make the header and background img responsive / CHECK 
+
+
+complete the main header and description text 
+
+put something like we are here to serve you, proudly serving the philadelphia, chester, delaware county, bucks and montgomery county 
+
+
+
+
+// 900px .service-area-container switch to column for responsiveness 
+
+
+
+// change book form to be a contact form 
+
+// take out date
+
+// add text area 
+
+// make it all column and double check responsiveness
+
+// add email
+
+
+// **** 
+
+// When done, clone repo, take out email/subscribe button 
+
+// fix reviews section and responsiveness 
+
+
+// ----> 
+
+// 6/3 
+
+// Implement all feedback fron Ion 
+
+// then share the website 
+
+// added white background to the insect buttons, I like how it looks, / 
+
+// now double check the border radius on each button on the homepage / 
+
+
+
+// now I want to ensure that the active link has an orange color 
+
+// in both desktop and within the offcanvas, 
+
+
