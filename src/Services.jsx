@@ -56,7 +56,7 @@ export default function Services() {
       <Navbar />
       <div className="services-tab-content-wrapper">
         <div className="services-header-wrapper">
-          <div className="contact-hero-content">
+          <div className="service-hero-content">
             <h1>Our Services</h1>
             <p>Professional Pest Control for Property Managers & Landlords</p>
           </div>

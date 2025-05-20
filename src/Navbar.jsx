@@ -1,32 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Offcanvas } from 'react-bootstrap';
-import { businessInfo } from './content/businessInfo';
-import './Styles/navbar_styles.scss';
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const navLinks = [
+    { to: '/', text: 'Home' },
+    { to: '/services', text: 'Services' },
+    { to: '/pest-id', text: 'Pest ID' },
+    { to: '/service-areas', text: 'Service Areas' }
+  ];
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const navLinks = [
-    { to: '/', text: 'Home' },
-    { to: '/services', text: 'Services' },
-    { to: '/pest-id', text: 'Pest ID' },
-    { to: '/service-areas', text: 'Service Areas' },
-    { to: '/contact', text: 'Contact' }
-  ];
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <nav className="navbar">
@@ -42,25 +39,18 @@ export default function Navbar() {
         </div>
 
         {!isMobile && (
-          <>
-            <div className="navbar-links">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="nav-link"
-                  onClick={handleClose}
-                >
-                  {link.text}
-                </Link>
-              ))}
-            </div>
-            <div className="navbar-contact">
-              <a href={`tel:${businessInfo.contact.phone}`} className="contact-phone">
-                {businessInfo.contact.phone}
-              </a>
-            </div>
-          </>
+          <div className="navbar-links">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="nav-link"
+                onClick={handleClose}
+              >
+                {link.text}
+              </Link>
+            ))}
+          </div>
         )}
 
         {isMobile && (
@@ -90,18 +80,9 @@ export default function Navbar() {
                 {link.text}
               </Link>
             ))}
-            <a href={`tel:${businessInfo.contact.phone}`} className="contact-phone">
-              {businessInfo.contact.phone}
-            </a>
           </div>
         </Offcanvas.Body>
       </Offcanvas>
     </nav>
-  );
-}
-
-export function OffcanvasTitle() {
-  return (
-    <Offcanvas.Title>Pest Free Properties</Offcanvas.Title>
   );
 } 

@@ -109,31 +109,6 @@
   }
 }
 
-.navbar-contact {
-  display: flex;
-  align-items: center;
-}
-
-.contact-phone {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  padding: 0.7rem 2rem;
-  background-color: #1a1a1a;
-  border-radius: 50px;
-  display: inline-block;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    background-color: #000000;
-  }
-}
-
 .mobile-menu-button {
   display: none;
   background: none;
@@ -217,18 +192,6 @@
     &:last-child {
       border-bottom: none;
     }
-  }
-
-  .contact-phone {
-    margin-top: 1rem;
-    text-align: center;
-    padding: 1rem;
-    background: #1a1a1a;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
   }
 }
 

@@ -19,8 +19,7 @@ export default function TermsOfService() {
           <p className="effective-date">Effective Date: {currentDate}</p>
           <p className="company-info">
             Company Name: {businessInfo.company.name}<br />
-            Service Area: {businessInfo.company.regions.join(' & ')}<br />
-            Contact: {businessInfo.contact.phone} • {businessInfo.contact.email}
+            Service Area: {businessInfo.company.regions.join(' & ')}
           </p>
 
           <section>

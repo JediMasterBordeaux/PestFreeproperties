@@ -108,29 +108,6 @@ body {
   width: 100%;
 }
 
-.navbar-contact {
-  flex: 1;
-  text-align: right;
-}
-
-.contact-phone {
-  text-decoration: none;
-  color: #2c5282;
-  font-weight: 700;
-  font-size: 1.2rem;
-  transition: all 0.2s ease;
-  padding: 0.8rem 1.5rem;
-  border: 2px solid #2c5282;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.contact-phone:hover {
-  color: #ffffff;
-  background-color: #2c5282;
-  transform: translateY(-2px);
-}
-
 /* Mobile Menu Button */
 .mobile-menu-button {
   display: none;
@@ -166,11 +143,6 @@ body {
   padding: 0.8rem 0;
 }
 
-.mobile-nav-links .contact-phone {
-  margin-top: 1rem;
-  text-align: center;
-}
-
 /* Add padding to main content to account for fixed header */
 main {
   padding-top: 6rem;
@@ -201,11 +173,6 @@ main {
   color: #e2e8f0;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-}
-
-.footer-contact p {
-  color: #e2e8f0;
-  margin-bottom: 0.5rem;
 }
 
 .footer-services ul,
@@ -299,8 +266,7 @@ main {
     font-size: 1.8rem;
   }
 
-  .navbar-links,
-  .navbar-contact {
+  .navbar-links {
     display: none;
   }
 
@@ -356,13 +322,6 @@ main {
     rgba(255, 255, 255, 0.1) 20px
   );
   animation: move-background 20s linear infinite;
-}
-
-.contact-hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 0 20px;
-  max-width: 800px;
 }
 
 .services-header-wrapper h1 {
