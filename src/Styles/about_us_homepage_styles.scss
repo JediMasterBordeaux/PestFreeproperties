@@ -253,6 +253,22 @@
   }
 }
 
+.phone-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5em;
+  height: 3.5em;
+  background-color: rgba(57, 181, 74, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  
+  img {
+    width: 1.8em;
+    filter: invert(56%) sepia(83%) saturate(380%) hue-rotate(93deg) brightness(92%) contrast(89%);
+  }
+}
+
 .call-for-help-container {
   display: flex;
   flex-direction: column;
@@ -264,6 +280,13 @@
   color: #718096;
   margin: 0;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.call-for-help-phone-num {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3748;
   letter-spacing: 0.5px;
 }
 

@@ -5,8 +5,19 @@ export const businessInfo = {
     experience: "20+ Years",
     credentials: ["Licensed", "Insured", "Bonded", "Double Certified"],
     targetMarket: "Property Managers & Landlords (Commercial & Residential)",
-    specialty: "Vacant unit pest clean-outs (no tenant interaction)",
+    specialty: "Vacant unit pest clean-outs (no tenant contact)",
     regions: ["Duval County, Florida", "Nassau County, Florida"]
+  },
+
+  contact: {
+    phone: "904-553-7120",
+    email: "brad@pestfreeproperties.com",
+    address: {
+      mailing: "P.O. Box 40174",
+      city: "Jacksonville",
+      state: "FL",
+      zip: "32203"
+    }
   },
 
   paymentMethods: [
@@ -61,6 +72,25 @@ export const businessInfo = {
     "Accepts nearly all forms of payment"
   ],
 
+  digitalAssets: {
+    landingPage: {
+      features: [
+        "Full responsive layout with call-to-actions",
+        "Services section with detailed pricing",
+        "\"Request a Quote\" form",
+        "Footer with contact info",
+        "Animated logo that fades in on page load (JavaScript + CSS)"
+      ]
+    },
+    marketingFlyer: {
+      features: [
+        "Clean design optimized for property manager outreach",
+        "Highlighted pricing, services, and contact info",
+        "Suitable for print, email, or Facebook Groups"
+      ]
+    }
+  },
+
   companyOverview: "Pest Free Properties specializes in efficient pest control solutions for property managers and landlords, focusing on vacant unit treatments and turnover services. Our streamlined process eliminates the need for tenant coordination, making property management easier.",
   
   taglines: [
@@ -109,5 +139,64 @@ export const businessInfo = {
     "Fernandina Beach",
     "Yulee",
     "Callahan"
-  ]
+  ],
+  
+  keyFeatures: [
+    "No Tenant Coordination Required",
+    "Fast Turnaround Times",
+    "Flexible Scheduling",
+    "Competitive Pricing",
+    "Guaranteed Results",
+    "Professional Service"
+  ],
+  
+  paymentMethods: [
+    "Credit/Debit Cards",
+    "Zelle",
+    "Venmo",
+    "PayPal",
+    "Cash App",
+    "Cash"
+  ],
+  
+  contact: {
+    phone: "904-553-7120",
+    email: "brad@pestfreeproperties.com",
+    hours: "Monday - Friday: 8:00 AM - 6:00 PM",
+    address: "123 Pest Control Way, Jacksonville, FL 32202"
+  },
+  
+  services: {
+    generalPestControl: {
+      name: "General Household Pest Control",
+      startingPrice: "450",
+      includes: [
+        "Roaches, ants, spiders, rodents",
+        "Interior + exterior treatment",
+        "Entry-point sealing",
+        "14-day pest-free guarantee"
+      ]
+    },
+    bedBugTreatment: {
+      name: "Bed Bug Eradication",
+      pricePerRoom: "300",
+      includes: [
+        "Chemical treatment (mattress & furniture safe)",
+        "Full unit inspection included",
+        "Follow-up available as needed"
+      ]
+    },
+    termiteTreatment: {
+      name: "Termite Treatment",
+      flatRate: "600",
+      reportCost: "125",
+      includes: [
+        "Direct liquid treatment (no bait systems)",
+        "Crawlspace, slab, and perimeter covered",
+        "6-month retreatment guarantee",
+        "Contracts available for long-term protection",
+        "Optional termite report (for legal or real estate use)"
+      ]
+    }
+  }
 }; 

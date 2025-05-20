@@ -16,7 +16,7 @@ export default function Hero() {
           ))}
         </div>
         <div className="hero-cta">
-          <a href="/services" className="cta-button">Get Started</a>
+          <a href="#contact" className="cta-button">Get Started</a>
           <a href="#services" className="cta-button secondary">Learn More</a>
         </div>
       </div>
