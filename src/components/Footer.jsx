@@ -2,16 +2,15 @@ import React from 'react';
 import { businessInfo } from '../content/businessInfo';
 
 export default function Footer() {
-  const { company, contact } = businessInfo;
+  const { company } = businessInfo;
   
   return (
     <div className="footer-wrapper">
       <div className="footer-content-container">
         <div className="footer-contact-info">
-          <h3>Contact Us</h3>
-          <p>Phone: {contact.phone}</p>
-          <p>Email: {contact.email}</p>
-          <p>Address: {contact.address.mailing}, {contact.address.city}, {contact.address.state} {contact.address.zip}</p>
+          <h3>About Us</h3>
+          <p>Professional Pest Control Solutions</p>
+          <p>For Property Managers & Landlords</p>
         </div>
 
         <div className="footer-hours">
